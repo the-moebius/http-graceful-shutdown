@@ -1,6 +1,6 @@
 # @moebius/http-graceful-shutdown
 
-[![npm version](https://badge.fury.io/js/http-graceful-shutdown.svg)](https://badge.fury.io/js/http-graceful-shutdown)
+[![npm version](https://badge.fury.io/js/%40moebius%2Fhttp-graceful-shutdown.svg)](https://badge.fury.io/js/%40moebius%2Fhttp-graceful-shutdown)
 
 
 This package for Node.js provides you with easy to use facilities
