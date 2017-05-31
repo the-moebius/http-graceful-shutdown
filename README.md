@@ -26,15 +26,15 @@ See [examples](#usage) below.
 When your application's process is interrupted by the operating system
 (by passing SIGINT or SIGTERM signals) by default the server is terminated
 right away and all open connections are brutally severed. This means that
-if some client was in the process of sending or receiving some data from your
-server will encounter an error. This could easily lead to escalating errors
-down the chain and missing data.
+if some client was in the process of sending or receiving data from your
+server it will encounter an error. This could easily lead to escalating errors
+down the chain and data corruption.
 
 The better strategy would be to listen for interruption signals and to close
 connections gracefully by closing only idle connections right away and waiting
-for active connections to properly complete.
+for pending requests to properly complete.
 
-This module solves exactly this problem or at least the second part of it.
+This module solves exactly this problem (or at least the second part of it).
 
 
 ## Installation
@@ -54,7 +54,7 @@ Or npm:
 
 ```js
 const http = require('http');  
-const GracefulShutdownManager = require('http-graceful-shutdown').GracefulShutdownManager;
+const GracefulShutdownManager = require('@moebius/http-graceful-shutdown').GracefulShutdownManager;
 
 
 const server = http.createServer(/** … */);
@@ -73,7 +73,7 @@ process.on('SIGTERM', () => {
 
 ```js
 const express = require('express');
-const GracefulShutdownManager = require('http-graceful-shutdown').GracefulShutdownManager;
+const GracefulShutdownManager = require('@moebius/http-graceful-shutdown').GracefulShutdownManager;
 
 
 const app = express();
