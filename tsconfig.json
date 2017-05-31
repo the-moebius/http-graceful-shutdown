@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["es6"],
+    "module": "commonjs",
+    "target": "ES6",
+    "alwaysStrict": true,
+    "listEmittedFiles": true,
+    "noImplicitAny": true,
+    "outDir": "build/",
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "declaration": true
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules/"
+  ]
+}
