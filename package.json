@@ -6,9 +6,18 @@
   "typings": "build/src/index.d.ts",
   "author": "Slava Fomin II <s.fomin@betsol.ru>",
   "license": "MIT",
+  "repository": "git@github.com:moebius-mlm/http-graceful-shutdown.git",
+  "directories": {
+    "example": "build/example"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
   "devDependencies": {
     "@types/express": "^4.0.35",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "typescript": "^2.6.2"
   },
   "keywords": [
     "http",
@@ -23,5 +32,6 @@
     "sigterm",
     "sigint",
     "typescript"
-  ]
+  ],
+  "dependencies": {}
 }
