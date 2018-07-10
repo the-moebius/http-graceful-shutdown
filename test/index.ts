@@ -1,7 +1,8 @@
 
 import * as express from 'express';
 import {NextFunction, Request, Response} from 'express';
-import {GracefulShutdownManager} from '../src/index';
+
+import {GracefulShutdownManager} from './../src/graceful-shutdown-manager';
 
 
 const PORT_NUMBER = 8080;

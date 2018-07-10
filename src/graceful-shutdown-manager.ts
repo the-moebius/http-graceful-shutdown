@@ -1,12 +1,19 @@
 
-import {IncomingMessage, Server, ServerResponse} from 'http';
+import {IncomingMessage, Server as HttpServer, ServerResponse} from 'http';
+import {Server as HttpsServer} from 'https';
+
 import Socket = NodeJS.Socket;
+
+
+interface SocketsMap {
+  [key: number]: Socket
+}
 
 
 export class GracefulShutdownManager {
 
   // Map for tracking opened connections.
-  private connections: { [key: number]: Socket } = {};
+  private connections: SocketsMap = {};
 
   private nextConnectionId = 1;
 
@@ -14,9 +21,10 @@ export class GracefulShutdownManager {
   private terminating = false;
 
 
-  constructor (private server: Server) {
+  constructor (private server: HttpServer | HttpsServer) {
     this.startWatchingServer();
   }
+
 
   /**
    * Initiates graceful termination of the server.
@@ -39,6 +47,7 @@ export class GracefulShutdownManager {
     }
 
   }
+
 
   private startWatchingServer () {
     this.server.on('connection', this.onConnection.bind(this));

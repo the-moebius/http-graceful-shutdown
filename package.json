@@ -1,11 +1,20 @@
 {
   "name": "@moebius/http-graceful-shutdown",
   "description": "Gracefully terminates HTTP servers in Node.js",
-  "version": "1.0.1",
-  "main": "build/src/index.js",
-  "typings": "build/src/index.d.ts",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "author": "Slava Fomin II <s.fomin@betsol.ru>",
   "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "tsc"
+  },
+  "files": [
+    "dist/src",
+    "dist/types",
+    "dist/index.js"
+  ],
   "devDependencies": {
     "@types/express": "^4.0.35",
     "express": "^4.15.3"

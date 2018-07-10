@@ -1,27 +1,29 @@
 {
   "compilerOptions": {
-    "lib": ["es6"],
-    "module": "commonjs",
-    "target": "ES6",
-    "alwaysStrict": true,
-    "listEmittedFiles": true,
-    "noImplicitAny": true,
-    "outDir": "build/",
-    "pretty": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES5",
+    "noImplicitReturns": true,
+    "strict": true,
     "removeComments": true,
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "typeRoots": [
-      "node_modules/@types"
+    "lib": [
+      "es5",
+      "es2015"
     ],
-    "declaration": true
+    "outDir": "dist",
+    "pretty": true,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "dist/types"
   },
   "include": [
-    "src/**/*",
-    "test/**/*"
+    "index.ts",
+    "src/**/*.ts",
+    "test/**/*.ts"
   ],
   "exclude": [
-    "node_modules/"
+    "node_modules"
   ]
 }
